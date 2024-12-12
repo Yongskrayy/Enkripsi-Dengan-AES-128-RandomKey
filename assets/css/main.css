@@ -1,0 +1,466 @@
+@font-face {
+  font-family: "kgredhand";
+  src: url(../fonts/kg_red_hand/KGRedHands.ttf);
+}
+@font-face {
+  font-family: "monsterrat";
+  src: url(../fonts/monsterrat/Montserrat-VariableFont_wght.ttf);
+}
+
+* {
+  font-family: "monsterrat";
+  font-weight: 500;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style-type: none;
+  box-sizing: border-box;
+}
+
+#sidebar-toggle {
+  display: none;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 240px;
+  height: 100%;
+  z-index: 100;
+  background: #c4dfdf;
+  transition: all 0.5s ease;
+  color: black;
+  overflow-y: auto;
+}
+
+.sidebar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+  padding: 0rem 1rem;
+}
+
+.sidebar .brand img {
+  width: 45px;
+  height: 20px;
+}
+
+.sidebar-menu {
+  padding: 1.5rem;
+}
+.sidebar-menu ul li:hover a span {
+  color: #fff;
+}
+
+.sidebar li {
+  margin-bottom: 2rem;
+}
+
+.sidebar a {
+  color: #000;
+  font-size: 1rem;
+}
+
+.sidebar a span:last-child {
+  padding-left: 0.6rem;
+}
+
+#sidebar-toggle:checked ~ .sidebar {
+  width: 60px;
+}
+
+#sidebar-toggle:checked ~ .sidebar .sidebar-header h3 span,
+#sidebar-toggle:checked ~ .sidebar .sidebar-header .brand img,
+#sidebar-toggle:checked ~ .sidebar li span:last-child {
+  display: none;
+}
+
+#sidebar-toggle:checked ~ .sidebar .sidebar-header,
+#sidebar-toggle:checked ~ .sidebar li {
+  display: flex;
+  justify-content: center;
+}
+
+#sidebar-toggle:checked ~ .main-content {
+  margin-left: 60px;
+}
+
+#sidebar-toggle:checked ~ .main-content header {
+  left: 60px;
+}
+
+.main-content {
+  position: relative;
+  margin-left: 240px;
+  transition: margin-left 500ms;
+}
+
+header {
+  position: fixed;
+  left: 240px;
+  top: 0;
+  z-index: 100;
+  width: 100%;
+  background: #d2e9e9;
+  height: 60px;
+  padding: 0rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #ccc;
+  transition: left 500ms;
+}
+
+main {
+  margin-top: 60px;
+  background: #fff;
+  min-height: 100vh;
+  padding: 1rem 3rem;
+}
+
+.main-head {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.main-head p:last-child {
+  font-size: 12px;
+  padding-left: 10px;
+}
+
+.header-dash {
+  font-weight: bold;
+}
+
+.dash-title {
+  font-size: 18px;
+  font-weight: bold;
+  color: #000;
+}
+
+.dash-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-column-gap: 5rem;
+}
+
+.card-single {
+  background: #e3f4f4;
+  border-radius: 7px;
+  box-shadow: 5px 5px 7px rgba(0, 0, 0, 0.4);
+}
+
+.card-body {
+  padding: 1.3rem 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.card-body span {
+  font-size: 1.5rem;
+  color: #777;
+  padding-right: 1.5rem;
+}
+
+.card-body h5 {
+  color: #777;
+  font-size: 1rem;
+}
+
+.card-body h4 {
+  color: #000;
+  font-size: 1.1rem;
+  margin-top: 0.2rem;
+}
+
+.card-deskripsi {
+  border-radius: 7px;
+  box-shadow: 5px 5px 7px rgba(0, 0, 0, 0.4);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+  padding: 1.3rem 1rem;
+  background: #e3f4f4;
+}
+
+.card-deskripsi h2 {
+  font-family: "kgredhand";
+}
+
+.deskripsi {
+  text-align: justify;
+  margin-top: 10px;
+  padding: 2rem 5em;
+}
+
+.img-pt {
+  width: 50%;
+  padding-bottom: 30px;
+}
+
+.footer-dash {
+  margin-top: 50px;
+  text-align: center;
+}
+
+.card-enkripsi {
+  border-radius: 7px;
+  box-shadow: 5px 5px 7px rgba(0, 0, 0, 0.4);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 2rem;
+  padding: 1.3rem 1rem;
+  background: #e3f4f4;
+}
+
+.card-panduan {
+  border-radius: 7px;
+  box-shadow: 5px 5px 7px rgba(0, 0, 0, 0.4);
+  display: flex;
+  flex-direction: column;
+  margin-top: 2rem;
+  padding: 1.3rem 2rem;
+  background: #e3f4f4;
+}
+
+.desk-panduan {
+  padding: 1rem 0.6rem;
+}
+
+.form-group label {
+  display: block;
+  margin: 2rem 0 0.5rem 0;
+}
+
+.form-group input[type="text"],
+.form-group input[type="file"],
+.form-group input[type="password"],
+.form-group textarea {
+  width: 100%;
+  padding: 0.6rem 0.8rem;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  outline: 0;
+  transition: border 0.15s;
+}
+
+.form-group input[type="text"],
+.form-group input[type="password"],
+.form-group input[type="file"] {
+  height: 2.8rem;
+}
+
+.form-group textarea {
+  resize: vertical;
+}
+
+.submit {
+  background: #47a992;
+  color: white;
+  font-weight: bold;
+  margin-top: 1rem;
+  padding: 1rem 1.5rem;
+  border: none;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.submit:hover {
+  background: rgba(173, 216, 230, 1);
+  color: black;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="file"]:focus,
+.form-group input[type="password"]:focus,
+.form-group textarea:focus {
+  border: 1px solid #000;
+}
+
+.inputPwd {
+  width: 100%;
+  padding: 0.6rem 0.8rem;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  outline: 0;
+  border-radius: 6px;
+}
+
+.table-responsive {
+  max-width: 960px;
+  border: 1.5px solid black;
+  background-color: white;
+  padding: 1rem 1rem;
+  overflow: auto;
+  margin: auto;
+  border-radius: 4px;
+}
+
+table {
+  width: 50%;
+  font-size: 14px;
+  color: #444;
+  white-space: nowrap;
+  border-collapse: collapse;
+}
+
+table > thead {
+  background-color: #d2e9e9;
+  color: black;
+}
+
+table > thead th {
+  padding: 20px;
+}
+
+table th,
+table td {
+  border: 1px solid rgb(24, 23, 23);
+  padding: 7px 13px;
+}
+
+.dekrip-file td {
+  border: none;
+}
+
+.action_btn_dekrip {
+  text-decoration: none;
+  color: #444;
+  background-color: #eabf16;
+  border: 1px solid rgb(0, 0, 0);
+  display: inline-block;
+  padding: 5px 15px;
+  font-weight: bold;
+  border-radius: 10px;
+  transition: 1s ease ease-in-out;
+}
+
+.action_btn_dekrip:hover {
+  box-shadow: 0 4px 10px #000;
+}
+
+.action_btn_enkrip {
+  text-decoration: none;
+  color: #ffffff;
+  background-color: green;
+  border: 1px solid rgb(0, 0, 0);
+  display: inline-block;
+  padding: 5px 15px;
+  font-weight: bold;
+  border-radius: 10px;
+  transition: 1s ease ease-in-out;
+}
+
+.action_btn_enkrip:hover {
+  box-shadow: 0 4px 10px #000;
+}
+
+.action_btn_download {
+  text-decoration: none;
+  color: #000;
+  background-color: #ffffff;
+  display: inline-block;
+  padding: 6px 30px;
+  font-weight: bold;
+  border-radius: 10px;
+  transition: 1s ease ease-in-out;
+}
+
+.action_btn_download:hover {
+  box-shadow: 0 4px 10px #000;
+}
+
+.action_btn_hapus {
+  text-decoration: none;
+  color: #fff;
+  background-color: #c22222;
+  display: inline-block;
+  padding: 6px 30px;
+  font-weight: bold;
+  border-radius: 10px;
+  transition: 1s ease ease-in-out;
+}
+
+.action_btn_hapus:hover {
+  box-shadow: 0 4px 10px #000;
+}
+
+/* RESPONSIVE DASHBOARD */
+
+@media only screen and (max-width: 1200px) {
+  .sidebar {
+    width: 60px;
+    z-index: 150;
+  }
+
+  .sidebar .sidebar-header h3 span,
+  .sidebar .sidebar-header .brand img,
+  .sidebar li span:last-child {
+    display: none;
+  }
+
+  .sidebar .sidebar-header,
+  .sidebar li {
+    display: flex;
+    justify-content: center;
+  }
+
+  .main-content {
+    margin-left: 60px;
+  }
+
+  .main-content header {
+    left: 60px;
+    width: calc(100% - 60px);
+  }
+  #sidebar-toggle:checked ~ .sidebar {
+    width: 240px;
+  }
+
+  #sidebar-toggle:checked ~ .sidebar .sidebar-header h3 span,
+  #sidebar-toggle:checked ~ .sidebar .sidebar-header .brand img,
+  #sidebar-toggle:checked ~ .sidebar li span:last-child {
+    display: inline;
+  }
+
+  #sidebar-toggle:checked ~ .sidebar .sidebar-header {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  #sidebar-toggle:checked ~ .sidebar li {
+    display: block;
+  }
+
+  #sidebar-toggle:checked ~ .main-content {
+    margin-left: 60px;
+  }
+
+  #sidebar-toggle:checked ~ .main-content header {
+    left: 60px;
+    width: calc(100% - 60px);
+  }
+  .img-pt {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 860px) {
+  .dash-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .card-single {
+    margin-bottom: 1rem;
+  }
+  .card-deskripsi {
+    display: block;
+  }
+  .img-pt {
+    width: 100%;
+  }
+}
